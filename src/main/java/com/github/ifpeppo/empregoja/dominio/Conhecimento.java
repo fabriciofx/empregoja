@@ -1,4 +1,4 @@
-package negocio;
+package com.github.ifpeppo.empregoja.dominio;
 
 public class Conhecimento {
 	private String Descrisao;
