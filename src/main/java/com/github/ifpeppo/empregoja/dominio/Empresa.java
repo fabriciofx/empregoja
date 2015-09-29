@@ -1,27 +1,27 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 public class Empresa {
-	private String Nome;
-	private String Cnpj;
+	private String nome;
+	private String cnpj;
 	
 	public Empresa(String nome, String cnpj){
-		this.Nome = nome;
-		this.Cnpj = cnpj;
+		this.nome = nome;
+		this.cnpj = cnpj;
 	}
 
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
 
 	public String getCnpj() {
-		return Cnpj;
+		return cnpj;
 	}
 
 	public void setCnpj(String cnpj) {
-		Cnpj = cnpj;
+		this.cnpj = cnpj;
 	}
 }
