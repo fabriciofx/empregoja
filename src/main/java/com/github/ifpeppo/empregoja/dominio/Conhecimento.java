@@ -1,18 +1,18 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 public class Conhecimento {
-	private String descrisao;
+	private String descricao;
 	
-	public Conhecimento(String descrisao){
-		this.descrisao = descrisao;
+	public Conhecimento(String descricao){
+		this.descricao = descricao;
 	}
 
-	public String getDescrisao() {
-		return descrisao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescrisao(String descrisao) {
-		this.descrisao = descrisao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }
