@@ -1,61 +1,31 @@
-package com.github.ifpeppo.empregoja.dominio;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.github.ifpeppo.empregoja.beangerenciado;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.github.ifpeppo.empregoja.dominio.Empresa;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Jackson Carvalho
  */
-@Entity
-@Table(name = "empresa")
+@ManagedBean(name = "cempresa")
+@ViewScoped
+public class ConstrutorEmpresa {
 
-public class Empresa implements Serializable {
-
-    @Id
-    @GeneratedValue
     private int id;
-    @Column(length = 205)
     private String nome;
-    @Column(length = 205)
     private String cnpj;
-    @Column(length = 205)
     private String estado;
-    @Column(length = 205)
     private String cidade;
-    @Column(length = 205)
     private String rua;
-    @Column(length = 205)
     private String bairro;
-    @Column(length = 205)
     private String numero;
-    @Column(length = 100)
-    private String email;
-    @Column(length = 205)
     private String telefone;
-
-    public Empresa(int id, String nome, String cnpj, String estado, String cidade, String rua, String bairro, String numero, String email, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.estado = estado;
-        this.cidade = cidade;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.numero = numero;
-        this.email = email;
-        this.telefone = telefone;
-    }
-
-    public Empresa(int id, String nome, String cnpj, String estado, String cidade, String rua, String bairro, String numero, String telefone) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
 
     public int getId() {
         return id;
@@ -121,20 +91,16 @@ public class Empresa implements Serializable {
         this.numero = numero;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public Empresa construirEmpresa() {
+        return new Empresa(this.id, this.nome, this.cnpj, this.estado, this.cidade, this.rua, this.bairro, this.numero, this.telefone);
     }
 
 }
