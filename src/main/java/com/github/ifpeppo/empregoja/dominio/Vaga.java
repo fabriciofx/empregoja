@@ -2,11 +2,11 @@ package com.github.ifpeppo.empregoja.dominio;
 
 public class Vaga {
 	private Empresa empresa;
-	private String descrisao;
+	private String descricao;
 	
-	public Vaga(Empresa empresa, String descrisao){
+	public Vaga(Empresa empresa, String descricao){
 		this.empresa = empresa;
-		this.descrisao = descrisao;
+		this.descricao = descricao;
 	}
 
 	public Empresa getEmpresa() {
@@ -17,12 +17,12 @@ public class Vaga {
 		this.empresa = empresa;
 	}
 
-	public String getDescrisao() {
-		return descrisao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescrisao(String descrisao) {
-		this.descrisao = descrisao;
+	public void setDescrisao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }

@@ -1,80 +1,88 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 public class Candidato {
-	
-	private String nome;
-	private String email;
-	private String cpf;
-	private String celular;
-	private String cidade;
-	private String uf;
-	private String senha;
+    private String nome;
+    private String cpf;
+    private String celular;
+    private String cidade;
+    private String uf;
+    private Usuario usuario;
+    private Experiencia experiencia;
+    private Comportamento comportamento;
 
-	public Candidato(String nome, String email, String cpf, String celular,
-			String cidade, String uf, String senha) {
-		this.nome = nome;
-		this.email = email;
-		this.cpf = cpf;
-		this.celular = celular;
-		this.cidade = cidade;
-		this.uf = uf;
-		this.senha = senha;
-	}
-	
-	public String getNome(){
-		return nome;
-	}
-	
-	public void setNome(String nome){
-		this.nome = nome;
-	}
-	
-	public String getEmail(){
-		return email;
-	}
-	
-	public void setEmail(String email){
-		this.email = email;
-	}
-	
-	public String getCpf(){
-		return cpf;
-	}
-	
-	public void setCpf(String cpf){
-		this.cpf = cpf;
-	}
+    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, Experiencia experiencia, Comportamento comportamento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.celular = celular;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.usuario = usuario;
+        this.experiencia = experiencia;
+        this.comportamento = comportamento;
+    }
 
-	public String getCelular() {
-		return celular;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getCidade() {
-		return cidade;
-	}
+    public String getCpf() {
+        return cpf;
+    }
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-	public String getUf() {
-		return uf;
-	}
+    public String getCelular() {
+        return celular;
+    }
 
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public String getCidade() {
+        return cidade;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}	
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Experiencia getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(Experiencia experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    public Comportamento getComportamento() {
+        return comportamento;
+    }
+
+    public void setComportamento(Comportamento comportamento) {
+        this.comportamento = comportamento;
+    }
+    
 }
