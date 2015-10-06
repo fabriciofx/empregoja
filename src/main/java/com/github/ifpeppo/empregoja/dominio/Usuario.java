@@ -5,10 +5,13 @@
  */
 package com.github.ifpeppo.empregoja.dominio;
 
+import javax.persistence.Embeddable;
+
 /**
  *
  * @author everton
  */
+@Embeddable
 public class Usuario {
     private String email;
     private String senha;
