@@ -1,5 +1,6 @@
 package com.github.ifpeppo.empregoja.dominio;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -63,6 +64,17 @@ public class Empresa implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+=======
+public class Empresa {
+    private String nome;
+    private String cnpj;
+    private Usuario usuario;
+
+    public Empresa(String nome, String cnpj, Usuario usuario) {
+        this.nome = nome;
+        this.cnpj = cnpj;
+        this.usuario = usuario;
+>>>>>>> becaa2bd34cbf077d99d48d4e18133a90b3c8f94
     }
 
     public String getNome() {
@@ -81,6 +93,7 @@ public class Empresa implements Serializable {
         this.cnpj = cnpj;
     }
 
+<<<<<<< HEAD
     public String getEstado() {
         return estado;
     }
@@ -138,3 +151,13 @@ public class Empresa implements Serializable {
     }
 
 }
+=======
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+}
+>>>>>>> becaa2bd34cbf077d99d48d4e18133a90b3c8f94
