@@ -15,6 +15,7 @@ import javax.persistence.Table;
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
     private long id;
@@ -37,7 +38,7 @@ public class Empresa implements Serializable {
     }
     
     // Apenas pro CDI/JPA
-    protected Empresa() {
+    public Empresa() {
     }
     
     public long getId() {
@@ -87,4 +88,6 @@ public class Empresa implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    
 }

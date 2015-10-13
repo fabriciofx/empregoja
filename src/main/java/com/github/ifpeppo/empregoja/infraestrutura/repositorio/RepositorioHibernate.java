@@ -48,12 +48,14 @@ public class RepositorioHibernate<T, I> implements Repositorio<T, I>, Serializab
 
         return typedQuery.getResultList();
     }
-
-    public void altera(T objeto) {
-        manager.merge(objeto);
+    
+    public void alterar(T objeto) {
+          manager.merge(objeto);
     }
-
+   
     public void remove(I i) {
         manager.remove(procura(i));
     }
+
+    
 }
