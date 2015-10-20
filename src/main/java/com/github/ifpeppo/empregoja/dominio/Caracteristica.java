@@ -2,11 +2,11 @@ package com.github.ifpeppo.empregoja.dominio;
 
 public class Caracteristica {
     private String texto;
-    private TipoCaracteristicas tipoCaracteristica;
+    private TipoCaracteristica tipo;
 
-    public Caracteristica(String texto, TipoCaracteristicas tipoCaracteristica) {
+    public Caracteristica(String texto, TipoCaracteristica tipo) {
         this.texto = texto;
-        this.tipoCaracteristica = tipoCaracteristica;
+        this.tipo = tipo;
     }
 
     public String getTexto() {
@@ -17,12 +17,12 @@ public class Caracteristica {
         this.texto = texto;
     }
 
-    public TipoCaracteristicas getTipoCaracteristica() {
-        return tipoCaracteristica;
+    public TipoCaracteristica getTipo() {
+        return tipo;
     }
 
-    public void setTipoCaracteristica(TipoCaracteristicas tipoCaracteristica) {
-        this.tipoCaracteristica = tipoCaracteristica;
+    public void setTipo(TipoCaracteristica tipo) {
+        this.tipo = tipo;
     }
     
 }

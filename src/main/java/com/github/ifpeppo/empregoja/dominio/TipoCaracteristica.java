@@ -1,5 +1,5 @@
 package com.github.ifpeppo.empregoja.dominio;
 
-public enum TipoCaracteristicas {
+public enum TipoCaracteristica {
     EXPERIENCIA, COMPORTAMENTO;
 }
