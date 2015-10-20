@@ -24,17 +24,17 @@ import javax.inject.Named;
 @ViewScoped
 public class ControladorEmpresas implements Serializable {
 
-  private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     @Inject
     private Empresas empresas;
 
 
     private  Empresa  empresa;
-    private List< Empresa> todosEmpresas;
+    private List< Empresa> todasEmpresas;
 
     public void consultar() {
-        todosEmpresas =  empresas.todos();
+        todasEmpresas =  empresas.todos();
     }
 
     public void novo() {
@@ -42,9 +42,9 @@ public class ControladorEmpresas implements Serializable {
     }
 
     public String adicionar() {
-         empresas.adiciona(empresa);
+        empresas.adiciona(empresa);
         consultar();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(" Empresa cadastrada com sucesso!"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Empresa cadastrada com sucesso!"));
         
         return "ApresentaEmpresa.xhtml";
     }
@@ -58,7 +58,7 @@ public class ControladorEmpresas implements Serializable {
     }
 
     public List< Empresa> getTodosEmpresa() {
-        return todosEmpresas;
+        return todasEmpresas;
     }
      public void detalhe( Empresa  empresa) {
         this.empresa = empresa;

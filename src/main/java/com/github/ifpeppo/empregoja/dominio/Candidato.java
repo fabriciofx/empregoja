@@ -7,18 +7,20 @@ public class Candidato {
     private String cidade;
     private String uf;
     private Usuario usuario;
-    private Experiencia experiencia;
-    private Comportamento comportamento;
+    private Caracteristica caracteristica;
 
-    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, Experiencia experiencia, Comportamento comportamento) {
+    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, Caracteristica caracteristica) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
         this.cidade = cidade;
         this.uf = uf;
         this.usuario = usuario;
-        this.experiencia = experiencia;
-        this.comportamento = comportamento;
+        this.caracteristica = caracteristica;
+    }
+    
+    // Apenas pro CDI/JPA
+    public Candidato() {
     }
 
     public String getNome() {
@@ -69,20 +71,12 @@ public class Candidato {
         this.usuario = usuario;
     }
 
-    public Experiencia getExperiencia() {
-        return experiencia;
+    public Caracteristica getCaracteristica() {
+        return caracteristica;
     }
 
-    public void setExperiencia(Experiencia experiencia) {
-        this.experiencia = experiencia;
+    public void setCaracteristica(Caracteristica caracteristica) {
+        this.caracteristica = caracteristica;
     }
 
-    public Comportamento getComportamento() {
-        return comportamento;
-    }
-
-    public void setComportamento(Comportamento comportamento) {
-        this.comportamento = comportamento;
-    }
-    
 }
