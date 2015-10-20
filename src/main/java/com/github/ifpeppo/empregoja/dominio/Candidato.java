@@ -1,6 +1,19 @@
 package com.github.ifpeppo.empregoja.dominio;
 
-public class Candidato {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "candidato")
+public class Candidato implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private long id;
+
     private String nome;
     private String cpf;
     private String celular;
@@ -18,7 +31,7 @@ public class Candidato {
         this.usuario = usuario;
         this.caracteristica = caracteristica;
     }
-    
+
     // Apenas pro CDI/JPA
     public Candidato() {
     }
