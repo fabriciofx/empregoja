@@ -1,6 +1,7 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,22 +21,26 @@ public class Candidato implements Serializable {
     private String cidade;
     private String uf;
     private Usuario usuario;
-    private Caracteristica caracteristica;
+    private List<Caracteristica> caracteristicas;
 
-    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, Caracteristica caracteristica) {
+    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, List<Caracteristica> caracteristicas) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
         this.cidade = cidade;
         this.uf = uf;
         this.usuario = usuario;
-        this.caracteristica = caracteristica;
+        this.caracteristicas = caracteristicas;
     }
 
     // Apenas pro CDI/JPA
     public Candidato() {
     }
 
+    public long getId() {
+        return id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -84,12 +89,12 @@ public class Candidato implements Serializable {
         this.usuario = usuario;
     }
 
-    public Caracteristica getCaracteristica() {
-        return caracteristica;
+    public List<Caracteristica> getCaracteristicas() {
+        return caracteristicas;
     }
 
-    public void setCaracteristica(Caracteristica caracteristica) {
-        this.caracteristica = caracteristica;
+    public void setCaracteristica(List<Caracteristica> caracteristica) {
+        this.caracteristicas = caracteristica;
     }
 
 }
