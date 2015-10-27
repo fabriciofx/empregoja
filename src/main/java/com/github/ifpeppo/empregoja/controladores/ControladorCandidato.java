@@ -57,4 +57,8 @@ public class ControladorCandidato {
     public List<Candidato> getTodosCandidatos() {
         return todosCandidatos;
     }
+    
+    public void detalhe(Candidato candidato){
+        this.candidato = candidato;
+    }
 }
