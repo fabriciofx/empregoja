@@ -1,5 +1,8 @@
 package com.github.ifpeppo.empregoja.dominio;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Vaga {
 	private Empresa empresa;
 	private String descricao;
@@ -7,6 +10,10 @@ public class Vaga {
 	public Vaga(Empresa empresa, String descricao){
 		this.empresa = empresa;
 		this.descricao = descricao;
+	}
+	
+	public Vaga(){
+		
 	}
 
 	public Empresa getEmpresa() {
