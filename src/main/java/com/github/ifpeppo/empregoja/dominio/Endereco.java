@@ -30,6 +30,10 @@ public class Endereco {
         this.cidade = cidade;
         this.cep = cep;
     }
+    
+    public Endereco(){
+    	
+    }
 
     public String getLogradouro() {
         return logradouro;
