@@ -8,18 +8,18 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <ui:include src="menu.xhtml"/>
+        <ui:include src="/menu.xhtml"/>
 
-        <h:form id="form">
+
+        <h:form id="form1">
             <p:messages/>
-            <p:fieldset legend="Cadastro da empresa">
+            <p:fieldset legend="Alterar a empresa">
                 <p:panelGrid columns="3">
                     <h:outputText value="CNPJ"/>
                     <p:inputText id="inputCNPJ" value="#{cempresa.cnpj}" required="true" 
@@ -61,10 +61,8 @@ and open the template in the editor.
                 </p:panelGrid>
 
             </p:fieldset>
-            <p:commandButton value="Cadastrar" action="#{controleEmpresa.inserirEmpresa(cempresa.construirEmpresa())}" 
-                             update="form" oncomplete="alert('A empresa foi cadastrada com sucesso')" 
-                             style="left:600px"/>
-
+            <p:commandButton value="Alterar" action="#{controleEmpresa.alterarEmpresa(controleEmpresa.selectedEmpresa)}" 
+                             update="form1" oncomplete="alert('A empresa foi alterada com sucesso')"/>
 
         </h:form>
     </body>

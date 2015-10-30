@@ -18,7 +18,7 @@ and open the template in the editor.
         <p:growl id="gro" showDetail="true" sticky="false" life="3000"
                  autoUpdate="true"/>
 
-        <ui:include src="menu.xhtml" />
+        <ui:include src="/menu.xhtml" />
 
 
         <h:form id="form">
@@ -42,7 +42,7 @@ and open the template in the editor.
             <p:commandButton value="visualizar dados da empresa" 
                              update="dial1" oncomplete="PF('painel1').show()"/>
             <p:commandButton value="alterar" 
-                             oncomplete="location.href='AlteraEmpresa.xhtml'"/>
+                             oncomplete="location.href='/empresa/alterar.xhtml'"/>
 
             <p:commandButton value="excluir" action="#{controleEmpresa.deletarEmpresa(controleEmpresa.selectedEmpresa)}"
                              update="form" />
