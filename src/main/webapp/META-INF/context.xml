@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/empregoja"/>
+<!-- Configuração necessária para ativar o suporte ao CDI -->
+<Context antiJARLocking="true" path="/empregoja">
+    <Resource
+        name="BeanManager"
+        auth="Container"
+        type="javax.enterprise.inject.spi.BeanManager"
+        factory="org.jboss.weld.resources.ManagerObjectFactory" />
+</Context>
