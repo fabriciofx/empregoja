@@ -22,40 +22,40 @@ and open the template in the editor.
             <p:fieldset legend="Cadastro da empresa">
                 <p:panelGrid columns="3">
                     <h:outputText value="CNPJ"/>
-                    <p:inputText id="inputCNPJ" value="#{cempresa.cnpj}" required="true" 
+                    <p:inputText id="inputCNPJ" value="#{controladorEmpresas.empresa.cnpj}" required="true" 
                                  requiredMessage="Digite o CNPJ"/>
                     <p:message for="inputCNPJ"/>
 
                     <h:outputText value="Nome"/>
-                    <p:inputText id="inputNome" value="#{cempresa.nome}" required="true"
+                    <p:inputText id="inputNome" value="#{controladorEmpresas.empresa.nome}" required="true"
                                  requiredMessage="Digite o Nome"/>
                     <p:message id="messageNome" for="inputNome" />
 
-                    <h:outputText value="Entado"/>
-                    <p:inputText id="inputEstado" value="#{cempresa.estado}" required="true"
+                    <h:outputText value="Estado"/>
+                    <p:inputText id="inputEstado" value="#{controladorEmpresas.empresa.endereco.estado}" required="true"
                                  requiredMessage="Digite o estado"/>
                     <p:message for="inputEstado"/>
 
                     <h:outputText value="Cidade"/>
-                    <p:inputText id="inputCidade" value="#{cempresa.cidade}" required="true"
+                    <p:inputText id="inputCidade" value="#{controladorEmpresas.empresa.endereco.cidade}" required="true"
                                  requiredMessage="Digite a cidade"/>
                     <p:message for="inputCidade"/>
 
                     <h:outputText value="Rua"/>
-                    <p:inputText value="#{cempresa.rua}"/>
+                    <p:inputText value="#{controladorEmpresas.empresa.endereco.logradouro}"/>
+                    <h:outputText/>
+                    
+                    <h:outputText value="Numero"/>
+                    <p:inputText value="#{controladorEmpresas.empresa.endereco.numero}"/>
                     <h:outputText/>
 
                     <h:outputText value="Bairro"/>
-                    <p:inputText id="inputBairro" value="#{cempresa.bairro}" maxlength="1"/>
-                    <p:message id="messageGenero" for="inputBairro"/>
-
-                    <h:outputText value="Numero"/>
-                    <p:inputText value="#{cempresa.numero}"/>
-                    <h:outputText/>
+                    <p:inputText id="inputBairro" value="#{controladorEmpresas.empresa.endereco.bairro}"/>
+                    <p:message id="messageGenero" for="inputBairro"/>  
 
 
                     <h:outputText value="Telefone Fixo"/>
-                    <p:inputText value="#{cempresa.telefone}"/>
+                    <p:inputText value="#{controladorEmpresas.empresa.telefone}"/>
                     <h:outputText/>
 
                 </p:panelGrid>

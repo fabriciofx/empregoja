@@ -38,7 +38,7 @@ public class ControladorEmpresas implements Serializable {
     }
 
     public void novo() {
-         empresa = new  Empresa();
+         empresa = new Empresa();
     }
 
     public String adicionar() {
@@ -46,7 +46,7 @@ public class ControladorEmpresas implements Serializable {
         consultar();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Empresa cadastrada com sucesso!"));
         
-        return "ApresentaEmpresa.xhtml";
+        return "/empresa/apresentar.xhtml";
     }
 
     public void alterar() {
