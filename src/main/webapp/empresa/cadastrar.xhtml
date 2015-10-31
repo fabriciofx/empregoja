@@ -15,7 +15,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <ui:include src="/menu.xhtml"/>
+        <ui:include src="/menu.xhtml"/><p/>
 
         <h:form id="form">
             <p:messages/>
@@ -61,7 +61,7 @@ and open the template in the editor.
                 </p:panelGrid>
 
             </p:fieldset>
-            <p:commandButton value="Cadastrar" action="#{controleEmpresa.inserirEmpresa(cempresa.construirEmpresa())}" 
+            <p:commandButton value="Cadastrar" action="#{controladorEmpresas.adicionar()}" 
                              update="form" oncomplete="alert('A empresa foi cadastrada com sucesso')" 
                              style="left:600px"/>
 

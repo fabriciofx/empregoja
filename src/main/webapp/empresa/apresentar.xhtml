@@ -22,9 +22,9 @@ and open the template in the editor.
 
 
         <h:form id="form">
-            <p:dataTable id="tabelaEmprea" value="#{controleEmpresa.recuperarTodosEmpresa()}" var="item"
+            <p:dataTable id="tabelaEmprea" value="#{controladorEmpresas.todosEmpresa}" var="item"
                          rowKey="#{item.id}" paginator="true" rows="5" selectionMode="single"
-                         selection="#{controleEmpresa.selectedEmpresa}">
+                         selection="#{controladorEmpresas.todosEmpresa}">
                 <p:column headerText="Codigo" footerText="Codigo">
                     <h:outputText value="#{item.id}"/>
                 </p:column>
@@ -44,7 +44,7 @@ and open the template in the editor.
             <p:commandButton value="alterar" 
                              oncomplete="location.href='/empresa/alterar.xhtml'"/>
 
-            <p:commandButton value="excluir" action="#{controleEmpresa.deletarEmpresa(controleEmpresa.selectedEmpresa)}"
+            <p:commandButton value="excluir"
                              update="form" />
 
             <p:dialog id="dial1" closable="false" resizable="false" modal="true"
@@ -52,31 +52,31 @@ and open the template in the editor.
 
                 <p:panelGrid columns="2">
                     <h:outputText value="CNPJ"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.cnpj}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.cnpj}"/>
 
                     <h:outputText value="Nome"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.nome}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.nome}"/>
 
                     <h:outputText value="Estado"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.estado}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.endereco.estado}"/>
 
                     <h:outputText value="Cidade"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.cidade}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.endereco.cidade}"/>
 
                     <h:outputText value="Rua"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.rua}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.endereco.logradouro}"/>
 
                     <h:outputText value="Bairro"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.bairro}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.endereco.bairro}"/>
 
                     <h:outputText value="Numero"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.numero}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.endereco.numero}"/>
 
                     <h:outputText value="E-mail"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.email}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.usuario.email}"/>
 
                     <h:outputText value="Telefone"/>
-                    <h:outputText value="#{controleEmpresa.selectedEmpresa.telefone}"/>
+                    <h:outputText value="#{controladorEmpresas.empresa.telefone}"/>
 
                 </p:panelGrid>
 
