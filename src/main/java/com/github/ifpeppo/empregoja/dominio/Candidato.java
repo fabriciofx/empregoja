@@ -23,9 +23,9 @@ public class Candidato implements Serializable {
     private Endereco endereco;
     @Embedded
     private Usuario usuario;
-    private List<Caracteristica> caracteristicas;
+    private List<Competencias> caracteristicas;
 
-    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Caracteristica> caracteristicas) {
+    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencias> caracteristicas) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
@@ -82,11 +82,11 @@ public class Candidato implements Serializable {
         this.usuario = usuario;
     }
 
-    public List<Caracteristica> getCaracteristicas() {
+    public List<Competencias> getCaracteristicas() {
         return caracteristicas;
     }
 
-    public void setCaracteristica(List<Caracteristica> caracteristica) {
+    public void setCaracteristica(List<Competencias> caracteristica) {
         this.caracteristicas = caracteristica;
     }
 

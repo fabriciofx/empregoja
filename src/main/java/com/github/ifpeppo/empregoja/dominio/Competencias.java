@@ -1,9 +1,9 @@
 package com.github.ifpeppo.empregoja.dominio;
 
-public class Caracteristica {
+public class Competencias {
     private String texto;
 
-    public Caracteristica(String texto) {
+    public Competencias(String texto) {
         this.texto = texto;
     }
 
