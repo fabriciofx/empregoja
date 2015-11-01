@@ -2,6 +2,7 @@ package com.github.ifpeppo.empregoja.dominio;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,17 +19,17 @@ public class Candidato implements Serializable {
     private String nome;
     private String cpf;
     private String celular;
-    private String cidade;
-    private String uf;
+    @Embedded
+    private Endereco endereco;
+    @Embedded
     private Usuario usuario;
     private List<Caracteristica> caracteristicas;
 
-    public Candidato(String nome, String cpf, String celular, String cidade, String uf, Usuario usuario, List<Caracteristica> caracteristicas) {
+    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Caracteristica> caracteristicas) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
-        this.cidade = cidade;
-        this.uf = uf;
+        this.endereco = endereco;
         this.usuario = usuario;
         this.caracteristicas = caracteristicas;
     }
@@ -65,20 +66,12 @@ public class Candidato implements Serializable {
         this.celular = celular;
     }
 
-    public String getCidade() {
-        return cidade;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public Usuario getUsuario() {

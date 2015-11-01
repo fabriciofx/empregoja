@@ -28,8 +28,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>5.2</version>
-            <scope>compile</scope>
+            <version>5.0</version>
         </dependency>
 
         <!-- Aparência (tema) dos componentes do Primefaces -->
