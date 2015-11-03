@@ -5,8 +5,8 @@
  */
 package com.github.ifpeppo.empregoja.controladores;
 
-import com.github.ifpeppo.empregoja.dominio.Candidato;
-import com.github.ifpeppo.empregoja.dominio.repositorio.Candidatos;
+import com.github.ifpeppo.empregoja.dominio.Usuario;
+import com.github.ifpeppo.empregoja.dominio.repositorio.Usuarios;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -21,41 +21,41 @@ public class ControladorUsuario {
     private static final long serialVersionUID = 1;
     
     @Inject
-    private Candidatos candidatos;
+    private Usuarios usuarios;
     
-    private Candidato candidato;
-    private List<Candidato> todosCandidatos;
+    private Usuario usuario;
+    private List<Usuario> todosUsuarios;
     
     public void consultar(){
-        todosCandidatos = candidatos.todos();
+        todosUsuarios = usuarios.todos();
     }
     
     public void novo(){
-        candidato = new Candidato();
+        usuario = new Usuario();
     }
     
     public String adicianar(){
-        candidatos.adiciona(candidato);
+        usuarios.adiciona(usuario);
         consultar();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Candidato cadastrado com sucesso!"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuario cadastrado com sucesso!"));
         
         return "";
     }
     
     public void alterar(){
-        candidatos.alterar(candidato);
+        usuarios.alterar(usuario);
     }
 
-    public Candidato getCandidato() {
-        return candidato;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public List<Candidato> getTodosCandidatos() {
-        return todosCandidatos;
+    public List<Usuario> getTodosUsuarios() {
+        return todosUsuarios;
     }
     
-    public void detalhe(Candidato candidato){
-        this.candidato = candidato;
+    public void detalhe(Usuario usuario){
+        this.usuario = usuario;
     }
     
     

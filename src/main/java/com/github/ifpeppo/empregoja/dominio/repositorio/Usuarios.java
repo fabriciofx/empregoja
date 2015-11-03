@@ -15,9 +15,7 @@ import java.util.List;
  */
 public interface Usuarios extends Repositorio<Usuario, Integer>{
     
-    public List<Usuario> porNome(String nome);
-    
-    public List<Usuario> porCpf(String Cpf);
+    public List<Usuario> porEmail(String email);    
     
     public void alterar(Usuario usuario);
     
