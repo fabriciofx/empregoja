@@ -25,11 +25,11 @@
     
     <dependencies>
         <!-- Primefaces: biblioteca de componentes ricos em JSF -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>5.0</version>
-        </dependency>
+    <dependency>  
+        <groupId>org.primefaces</groupId>  
+        <artifactId>primefaces</artifactId>  
+        <version>5.3</version>  
+    </dependency>  
 
         <!-- Aparência (tema) dos componentes do Primefaces -->
         <dependency>
