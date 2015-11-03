@@ -7,16 +7,21 @@ package com.github.ifpeppo.empregoja.controladores;
 
 import com.github.ifpeppo.empregoja.dominio.Usuario;
 import com.github.ifpeppo.empregoja.dominio.repositorio.Usuarios;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author leonardoanselmo
  */
-public class ControladorUsuario {
+@Named
+@ViewScoped
+public class ControladorUsuario implements Serializable {
     
     private static final long serialVersionUID = 1;
     
@@ -34,7 +39,7 @@ public class ControladorUsuario {
         usuario = new Usuario();
     }
     
-    public String adicianar(){
+    public String adicionar(){
         usuarios.adiciona(usuario);
         consultar();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuario cadastrado com sucesso!"));
