@@ -1,6 +1,7 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -11,7 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "candidato")
 public class Candidato implements Serializable {
-
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue
     private long id;
@@ -19,23 +21,33 @@ public class Candidato implements Serializable {
     private String nome;
     private String cpf;
     private String celular;
+    
     @Embedded
     private Endereco endereco;
+    
     @Embedded
     private Usuario usuario;
-    private List<Competencias> caracteristicas;
+    
+//    private List<Competencias> competencias;
+//    private List<Experiencia> experiencias;
 
-    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencias> caracteristicas) {
+    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario//, List<Competencias> competencias,
+            /*List<Experiencia> experiencias*/) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
         this.endereco = endereco;
         this.usuario = usuario;
-        this.caracteristicas = caracteristicas;
+//        this.competencias = competencias;
+//        this.experiencias = experiencias;
     }
 
     // Apenas pro CDI/JPA
     public Candidato() {
+        endereco = new Endereco();
+        usuario = new Usuario();
+//        competencias = new ArrayList<>();
+//        experiencias = new ArrayList<>();
     }
 
     public long getId() {
@@ -82,12 +94,27 @@ public class Candidato implements Serializable {
         this.usuario = usuario;
     }
 
-    public List<Competencias> getCaracteristicas() {
-        return caracteristicas;
-    }
-
-    public void setCaracteristica(List<Competencias> caracteristica) {
-        this.caracteristicas = caracteristica;
-    }
-
+//    public List<Competencias> getCompetencias() {
+//        return competencias;
+//    }
+//
+//    public void setCaracteristica(List<Competencias> competencias) {
+//        this.competencias = competencias;
+//    }
+//
+//    public List<Experiencia> getExperiencias() {
+//        return experiencias;
+//    }
+//
+//    public void setExperiencias(List<Experiencia> experiencias) {
+//        this.experiencias = experiencias;
+//    }
+//    
+//    public void adicionarCompetencias(Competencias competencia){
+//        competencias.add(competencia);
+//    }
+//    
+//    public void adicionarExperiencias(Experiencia experiencia){
+//        experiencias.add(experiencia);
+//    }
 }

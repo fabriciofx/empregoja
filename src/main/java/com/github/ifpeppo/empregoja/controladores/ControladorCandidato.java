@@ -6,11 +6,14 @@
 package com.github.ifpeppo.empregoja.controladores;
 
 import com.github.ifpeppo.empregoja.dominio.Candidato;
+//import com.github.ifpeppo.empregoja.dominio.Competencias;
+//import com.github.ifpeppo.empregoja.dominio.Experiencia;
 import com.github.ifpeppo.empregoja.dominio.repositorio.Candidatos;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -20,7 +23,7 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped
-public class ControladorCandidato {
+public class ControladorCandidato implements Serializable {
     
     private static final long serialVersionUID = 1;
     
@@ -29,6 +32,8 @@ public class ControladorCandidato {
     
     private Candidato candidato;
     private List<Candidato> todosCandidatos;
+//    private String competenciasCandidato;
+//    private String experienciasCandidato;
     
     public void consultar(){
         todosCandidatos = candidatos.todos();
@@ -38,12 +43,16 @@ public class ControladorCandidato {
         candidato = new Candidato();
     }
     
-    public String adicianar(){
+    public String adicionar(){
+//        Competencias competencias = new Competencias(competenciasCandidato);
+//        Experiencia experiencias = new Experiencia(experienciasCandidato);
+//        candidato.adicionarCompetencias(competencias);
+//        candidato.adicionarExperiencias(experiencias);
         candidatos.adiciona(candidato);
         consultar();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Candidato cadastrado com sucesso!"));
         
-        return "";
+        return "/candidato/apresentar";
     }
     
     public void alterar(){
@@ -61,4 +70,21 @@ public class ControladorCandidato {
     public void detalhe(Candidato candidato){
         this.candidato = candidato;
     }
+
+//    public String getCompetenciasCandidato() {
+//        return competenciasCandidato;
+//    }
+//
+//    public void setCompetenciasCandidato(String competenciasCandidato) {
+//        this.competenciasCandidato = competenciasCandidato;
+//    }
+//
+//    public String getExperienciasCandidato() {
+//        return experienciasCandidato;
+//    }
+//
+//    public void setExperienciasCandidato(String experienciasCandidato) {
+//        this.experienciasCandidato = experienciasCandidato;
+//    }
+    
 }

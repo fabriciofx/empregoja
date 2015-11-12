@@ -8,6 +8,10 @@
         <class>com.github.ifpeppo.empregoja.dominio.Conhecimento</class>
         <class>com.github.ifpeppo.empregoja.dominio.Empresa</class>
         <class>com.github.ifpeppo.empregoja.dominio.Vaga</class>
+        <class>com.github.ifpeppo.empregoja.dominio.Usuario</class>
+        <class>com.github.ifpeppo.empregoja.dominio.Competencias</class>
+        <class>com.github.ifpeppo.empregoja.dominio.Experiencia</class>
+        <class>com.github.ifpeppo.empregoja.dominio.Endereco</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/empregoja?autoReconnect=true&amp;characterEncoding=UTF-8&amp;useUnicode=true&amp;createDatabaseIfNotExist=true"/>

@@ -4,9 +4,11 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Competencias implements Serializable {
+@Table(name = "experiencia")
+public class Experiencia implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -15,7 +17,7 @@ public class Competencias implements Serializable {
     
     private String texto;
 
-    public Competencias(String texto) {
+    public Experiencia(String texto) {
         this.texto = texto;
     }
 

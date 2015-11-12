@@ -1,10 +1,13 @@
 package com.github.ifpeppo.empregoja.dominio;
 
+import java.io.Serializable;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Vaga {
-	private Empresa empresa;
+public class Vaga implements Serializable {
+        private static final long serialVersionUID = 1L;
+	
+        private Empresa empresa;
 	private String descricao;
 	
 	public Vaga(Empresa empresa, String descricao){

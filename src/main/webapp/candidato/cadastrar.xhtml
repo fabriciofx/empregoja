@@ -3,40 +3,91 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        <f:metadata>
+            <f:viewAction action="#{controladorCandidato.novo}" />
+        </f:metadata>
+
+        <p:growl id="gro" showDetail="true" sticky="false" life="3000" autoUpdate="true"/>
         <ui:include src="/menu.xhtml"/>
-        
-        <h:form id="form">
-           <p:wizard>
-                <p:tab id="dadosCandidato" title="Dados do Candidato">
-                    <p:panel header="Insira os Dados do Candidato">
-                    
-                        <p:panelGrid columns="3">
-                        <h:outputText value="Nome"/>
-                        <h:inputText id="inputNome" value="#{controladorCandidato.candidato.nome}" required="true" 
-                                 requiredMessage="Digite o Nome"/>
-                        <p:message for="inputNome"/>
-                    
-                        <h:outputText value="CPF"/>
-                        <h:inputText id="inputCPF" value="#{controladorCandidato.candidato.cpf}" required="true" 
-                                 requiredMessage="Digite o CPF"/>
-                        <p:message for="inputCPF"/>
-                    
-                        <h:outputText value="Celular"/>
-                        <h:inputText id="inputCelular" value="#{controladorCandidato.candidato.celular}" required="true" 
-                                 requiredMessage="Digite o Celular"/>
-                        <p:message for="inputCelular"/>
+
+        <h:form id="cadastroCandidato">
+
+            <p:panelGrid columns="3">
+                <h:outputText value="Nome"/>
+                <h:inputText id="inputNome" value="#{controladorCandidato.candidato.nome}" required="true" 
+                             requiredMessage="Digite o Nome"/>
+                <p:message for="inputNome"/>
+
+                <h:outputText value="CPF"/>
+                <h:inputText id="inputCPF" value="#{controladorCandidato.candidato.cpf}" required="true" 
+                             requiredMessage="Digite o CPF"/>
+                <p:message for="inputCPF"/>
+
+                <h:outputText value="Celular"/>
+                <h:inputText id="inputCelular" value="#{controladorCandidato.candidato.celular}" required="true" 
+                             requiredMessage="Digite o Celular"/>
+                <p:message for="inputCelular"/>
+
+                <h:outputText value="Logradouro"/>
+                <h:inputText id="inputLogradouro" value="#{controladorCandidato.candidato.endereco.logradouro}" required="true" 
+                             requiredMessage="Digite o Logradouro"/>
+                <p:message for="inputLogradouro"/>
+
+                <h:outputText value="Número"/>
+                <h:inputText id="inputNumero" value="#{controladorCandidato.candidato.endereco.numero}" required="true" 
+                             requiredMessage="Digite o Número"/>
+                <p:message for="inputNumero"/>
                 
-                    </p:panelGrid>
-                </p:panel>
-                </p:tab>
+                <h:outputText value="Bairro"/>
+                <h:inputText id="inputBairro" value="#{controladorCandidato.candidato.endereco.bairro}" required="true" 
+                             requiredMessage="Digite o Bairro"/>
+                <p:message for="inputBairro"/>
                 
-           </p:wizard>         
+                <h:outputText value="Estado"/>
+                <h:inputText id="inputEstado" value="#{controladorCandidato.candidato.endereco.estado}" required="true" 
+                             requiredMessage="Digite o Estado"/>
+                <p:message for="inputEstado"/>
+                
+                <h:outputText value="Cidade"/>
+                <h:inputText id="inputCidade" value="#{controladorCandidato.candidato.endereco.cidade}" required="true" 
+                             requiredMessage="Digite a Cidade "/>
+                <p:message for="inputCidade"/>
+                
+                <h:outputText value="CEP"/>
+                <h:inputText id="inputCEP" value="#{controladorCandidato.candidato.endereco.cep}" required="true" 
+                             requiredMessage="Digite o CEP"/>
+                <p:message for="inputCEP"/>
+                
+                <h:outputText value="Email"/>
+                <h:inputText id="inputEmail" value="#{controladorCandidato.candidato.usuario.email}" required="true" 
+                             requiredMessage="Digite o Email"/>
+                <p:message for="inputEmail"/>
+                
+                <h:outputText value="Senha"/>
+                <h:inputText id="inputSenha" value="#{controladorCandidato.candidato.usuario.senha}" required="true" 
+                             requiredMessage="Digite a Senha"/>
+                <p:message for="inputSenha"/>
+                
+<!--                <h:outputText value="Competencias"/>
+                <h:inputTextarea id="inputCompetencias" value="{controladorCandidato.competenciasCandidato}" required="true"
+                                 requiredMessage="Digite suas Competencias"/>
+                <p:message for="inputCompetencias"/>
+                
+                <h:outputText value="Experiencia"/>
+                <h:inputTextarea id="inputExperiencia" value="{controladorCandidato.experienciasCandidato}" />
+                <h:outputText/>-->
+            </p:panelGrid>
+            <p:commandButton value="Salvar"
+                             update="cadastroCandidato"
+                             action="#{controladorCandidato.adicionar()}"/>
+            <p:button value="Cancelar"
+                             outcome="/candidato/apresentar"/>
         </h:form>
     </h:body>
 </html>
-
