@@ -28,26 +28,26 @@ public class Candidato implements Serializable {
     @Embedded
     private Usuario usuario;
     
-//    private List<Competencias> competencias;
-//    private List<Experiencia> experiencias;
+    private List<Competencias> competencias;
+    private List<Experiencia> experiencias;
 
-    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario//, List<Competencias> competencias,
-            /*List<Experiencia> experiencias*/) {
+    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencias> competencias,
+            List<Experiencia> experiencias) {
         this.nome = nome;
         this.cpf = cpf;
         this.celular = celular;
         this.endereco = endereco;
         this.usuario = usuario;
-//        this.competencias = competencias;
-//        this.experiencias = experiencias;
+        this.competencias = competencias;
+        this.experiencias = experiencias;
     }
 
     // Apenas pro CDI/JPA
     public Candidato() {
         endereco = new Endereco();
         usuario = new Usuario();
-//        competencias = new ArrayList<>();
-//        experiencias = new ArrayList<>();
+        competencias = new ArrayList<>();
+        experiencias = new ArrayList<>();
     }
 
     public long getId() {
@@ -94,27 +94,33 @@ public class Candidato implements Serializable {
         this.usuario = usuario;
     }
 
-//    public List<Competencias> getCompetencias() {
-//        return competencias;
-//    }
-//
-//    public void setCaracteristica(List<Competencias> competencias) {
-//        this.competencias = competencias;
-//    }
-//
-//    public List<Experiencia> getExperiencias() {
-//        return experiencias;
-//    }
-//
-//    public void setExperiencias(List<Experiencia> experiencias) {
-//        this.experiencias = experiencias;
-//    }
-//    
-//    public void adicionarCompetencias(Competencias competencia){
-//        competencias.add(competencia);
-//    }
-//    
-//    public void adicionarExperiencias(Experiencia experiencia){
-//        experiencias.add(experiencia);
-//    }
+    public List<Competencias> getCompetencias() {
+        return competencias;
+    }
+
+    public void setCaracteristica(List<Competencias> competencias) {
+        this.competencias = competencias;
+    }
+
+    public List<Experiencia> getExperiencias() {
+        return experiencias;
+    }
+
+    public void setExperiencias(List<Experiencia> experiencias) {
+        this.experiencias = experiencias;
+    }
+    
+    public void adicionarCompetencias(Competencias competencia){
+        if(competencia == null){
+            return;
+        }
+        competencias.add(competencia);
+    }
+    
+    public void adicionarExperiencias(Experiencia experiencia){
+        if(experiencia == null){
+            return;
+        }
+        experiencias.add(experiencia);
+    }
 }
