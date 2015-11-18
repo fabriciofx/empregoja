@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Competencias implements Serializable {
+public class Competencia implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -15,8 +15,11 @@ public class Competencias implements Serializable {
     
     private String texto;
 
-    public Competencias(String texto) {
+    public Competencia(String texto) {
         this.texto = texto;
+    }
+    
+    public Competencia(){
     }
 
     public String getTexto() {

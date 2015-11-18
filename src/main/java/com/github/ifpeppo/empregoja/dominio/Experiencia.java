@@ -20,6 +20,9 @@ public class Experiencia implements Serializable {
     public Experiencia(String texto) {
         this.texto = texto;
     }
+    
+    public Experiencia(){
+    }
 
     public String getTexto() {
         return texto;

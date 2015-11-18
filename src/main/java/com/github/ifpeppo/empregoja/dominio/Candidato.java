@@ -7,6 +7,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,10 +29,12 @@ public class Candidato implements Serializable {
     @Embedded
     private Usuario usuario;
     
-    private List<Competencias> competencias;
+    @OneToMany
+    private List<Competencia> competencias;
+    @OneToMany
     private List<Experiencia> experiencias;
 
-    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencias> competencias,
+    public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencia> competencias,
             List<Experiencia> experiencias) {
         this.nome = nome;
         this.cpf = cpf;
@@ -94,11 +97,11 @@ public class Candidato implements Serializable {
         this.usuario = usuario;
     }
 
-    public List<Competencias> getCompetencias() {
+    public List<Competencia> getCompetencias() {
         return competencias;
     }
 
-    public void setCaracteristica(List<Competencias> competencias) {
+    public void setCaracteristica(List<Competencia> competencias) {
         this.competencias = competencias;
     }
 
@@ -110,7 +113,7 @@ public class Candidato implements Serializable {
         this.experiencias = experiencias;
     }
     
-    public void adicionarCompetencias(Competencias competencia){
+    public void adicionarCompetencias(Competencia competencia){
         if(competencia == null){
             return;
         }

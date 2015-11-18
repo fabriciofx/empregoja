@@ -6,7 +6,7 @@
 package com.github.ifpeppo.empregoja.controladores;
 
 import com.github.ifpeppo.empregoja.dominio.Candidato;
-import com.github.ifpeppo.empregoja.dominio.Competencias;
+import com.github.ifpeppo.empregoja.dominio.Competencia;
 import com.github.ifpeppo.empregoja.dominio.Experiencia;
 import com.github.ifpeppo.empregoja.dominio.repositorio.Candidatos;
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class ControladorCandidato implements Serializable {
     }
     
     public String adicionar(){
-        Competencias competencias = new Competencias(competenciasCandidato);
+        Competencia competencias = new Competencia(competenciasCandidato);
         Experiencia experiencias = new Experiencia(experienciasCandidato);
         candidato.adicionarCompetencias(competencias);
         candidato.adicionarExperiencias(experiencias);
