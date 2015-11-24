@@ -5,34 +5,26 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Vaga implements Serializable {
-        private static final long serialVersionUID = 1L;
-	
-        private Empresa empresa;
-	private String descricao;
-	
-	public Vaga(Empresa empresa, String descricao){
-		this.empresa = empresa;
-		this.descricao = descricao;
-	}
-	
-	public Vaga(){
-		
-	}
 
-	public Empresa getEmpresa() {
-		return empresa;
-	}
+    private static final long serialVersionUID = 1L;
 
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
+    private String descricao;
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public Vaga(String descricao) {
 
-	public void setDescrisao(String descricao) {
-		this.descricao = descricao;
-	}
-	
+        this.descricao = descricao;
+    }
+
+    public Vaga() {
+
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescrisao(String descricao) {
+        this.descricao = descricao;
+    }
+
 }

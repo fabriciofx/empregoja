@@ -1,11 +1,14 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import com.github.ifpeppo.empregoja.dominio.Vaga;
 
 /**
  *
@@ -28,14 +31,19 @@ public class Empresa implements Serializable {
     private Endereco endereco;
     @Embedded
     private Usuario usuario;
-    
-    public Empresa(long id, String nome, String cnpj, Endereco endereco, Usuario usuario, String telefone) {
+       
+    @OneToMany
+    private List<Vaga> vagas;
+
+    public Empresa(long id, String nome, String telefone, Endereco endereco, Usuario usuario, List<Vaga> vagas) {
         this.id = id;
         this.nome = nome;
-        this.cnpj = cnpj;
-        this.endereco = endereco;
         this.telefone = telefone;
+        this.endereco = endereco;
+        this.usuario = usuario;
+        this.vagas = vagas;
     }
+   
     
     // Apenas pro CDI/JPA
     public Empresa() {
@@ -89,5 +97,18 @@ public class Empresa implements Serializable {
         this.usuario = usuario;
     }
 
+    public List<Vaga> getVagas() {
+        return vagas;
+    }
+
+    public void setVagas(List<Vaga> vagas) {
+        this.vagas = vagas;
+    }
+public void adicionarVaga(Vaga vaga){
+        if(vagas == null){
+            return;
+        }
+        vagas.add(vaga);
+    }
     
 }

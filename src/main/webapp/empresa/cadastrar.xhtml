@@ -23,15 +23,30 @@ and open the template in the editor.
             <p:messages/>
             <p:fieldset legend="Cadastro da empresa">
                 <p:panelGrid columns="3">
+                    
+                      <h:outputText value="Nome"/>
+                    <p:inputText id="inputNome" value="#{controladorEmpresas.empresa.nome}" required="true"
+                                 requiredMessage="Digite o Nome"/>
+                    <p:message id="messageNome" for="inputNome" />
+                    
                     <h:outputText value="CNPJ"/>
                     <h:inputText id="inputCNPJ" value="#{controladorEmpresas.empresa.cnpj}" required="true" 
                                  requiredMessage="Digite o CNPJ"/>
                     <p:message for="inputCNPJ"/>
+                    
+                    <h:outputText value="Logradouro"/>
+                    <p:inputText value="#{controladorEmpresas.empresa.endereco.logradouro}"/>
+                    <h:outputText/>
+                    
+                    <h:outputText value="Numero"/>
+                    <p:inputText value="#{controladorEmpresas.empresa.endereco.numero}"/>
+                    <h:outputText/>
 
-                    <h:outputText value="Nome"/>
-                    <p:inputText id="inputNome" value="#{controladorEmpresas.empresa.nome}" required="true"
-                                 requiredMessage="Digite o Nome"/>
-                    <p:message id="messageNome" for="inputNome" />
+                    <h:outputText value="Bairro"/>
+                    <p:inputText id="inputBairro" value="#{controladorEmpresas.empresa.endereco.bairro}"/>
+                    <p:message id="messageLogradouro" for="inputBairro"/>  
+
+                 
 
                     <h:outputText value="Estado"/>
                     <p:inputText id="inputEstado" value="#{controladorEmpresas.empresa.endereco.estado}" required="true"
@@ -43,25 +58,30 @@ and open the template in the editor.
                                  requiredMessage="Digite a cidade"/>
                     <p:message for="inputCidade"/>
 
-                    <h:outputText value="Rua"/>
-                    <p:inputText value="#{controladorEmpresas.empresa.endereco.logradouro}"/>
-                    <h:outputText/>
-                    
-                    <h:outputText value="Numero"/>
-                    <p:inputText value="#{controladorEmpresas.empresa.endereco.numero}"/>
-                    <h:outputText/>
-
-                    <h:outputText value="Bairro"/>
-                    <p:inputText id="inputBairro" value="#{controladorEmpresas.empresa.endereco.bairro}"/>
-                    <p:message id="messageGenero" for="inputBairro"/>  
-
-
+                     <h:outputText value="CEP"/>
+                    <p:inputText id="inputCEP" value="#{controladorEmpresas.empresa.endereco.cep}" required="true"
+                                 requiredMessage="Digite o cep"/>
+                    <p:message for="inputCEP"/>
+              
                     <h:outputText value="Telefone Fixo"/>
                     <p:inputText value="#{controladorEmpresas.empresa.telefone}"/>
                     <h:outputText/>
-
+                <h:outputText value="Email"/>
+                <h:inputText id="inputEmail" value="#{controladorEmpresas.empresa.usuario.email}" required="true" 
+                             requiredMessage="Digite o Email"/>
+                <p:message for="inputEmail"/>
+                
+                <h:outputText value="Senha"/>
+                <h:inputText id="inputSenha" value="#{controladorEmpresas.empresa.usuario.senha}" required="true" 
+                             requiredMessage="Digite a Senha"/>
+                <p:message for="inputSenha"/>
                 </p:panelGrid>
-
+                
+                 <h:outputText value="Vagas"/>
+                 <h:inputTextarea id="inputVaga" value="#{controladorEmpresas.vagaEmpresa}" required="true"
+                                 requiredMessage="Digite as vagas"/>
+                <p:message for="inputVaga"/>
+                
             </p:fieldset>
             <p:commandButton value="Cadastrar" action="#{controladorEmpresas.adicionar()}" 
                              update="form" oncomplete="alert('A empresa foi cadastrada com sucesso')" 

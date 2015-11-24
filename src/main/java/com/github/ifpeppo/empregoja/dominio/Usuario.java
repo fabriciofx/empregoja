@@ -15,7 +15,11 @@ public class Usuario implements Serializable{
         this.email = email;
         this.senha = senha;
     }
-    
+    public String autenticar(){
+        
+        return "/menu.xhtml";
+        
+    }
     public Usuario(){
         
     }
