@@ -35,9 +35,10 @@ public class Empresa implements Serializable {
     @OneToMany
     private List<Vaga> vagas;
 
-    public Empresa(long id, String nome, String telefone, Endereco endereco, Usuario usuario, List<Vaga> vagas) {
+    public Empresa(long id, String nome,String cnpj, String telefone, Endereco endereco, Usuario usuario, List<Vaga> vagas) {
         this.id = id;
         this.nome = nome;
+        this.cnpj=cnpj;
         this.telefone = telefone;
         this.endereco = endereco;
         this.usuario = usuario;
