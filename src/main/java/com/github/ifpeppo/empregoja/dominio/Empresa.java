@@ -3,6 +3,7 @@ package com.github.ifpeppo.empregoja.dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class Empresa implements Serializable {
     @Embedded
     private Usuario usuario;
        
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Vaga> vagas;
 
     public Empresa(long id, String nome,String cnpj, String telefone, Endereco endereco, Usuario usuario, List<Vaga> vagas) {
