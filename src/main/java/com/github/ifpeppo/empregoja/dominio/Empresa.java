@@ -1,6 +1,7 @@
 package com.github.ifpeppo.empregoja.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -8,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import com.github.ifpeppo.empregoja.dominio.Vaga;
 
 /**
  *
@@ -47,6 +47,9 @@ public class Empresa implements Serializable {
     
     // Apenas pro CDI/JPA
     public Empresa() {
+        endereco = new Endereco();
+        usuario = new Usuario();
+        vagas = new ArrayList<>();
     }
     
     public long getId() {

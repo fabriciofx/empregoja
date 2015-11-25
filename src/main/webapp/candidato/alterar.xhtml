@@ -16,22 +16,77 @@
             <p:fieldset legend="Alterar do Candidato">
                 
                 <p:panelGrid columns="3">
-                    <h:outputText value="Nome"/>
-                    <h:inputText id="inputNome" value="#{controladorCandidato.candidato.nome}" required="true" 
-                                 requiredMessage="Digite o Nome"/>
-                    <p:message for="inputNome"/>
-                    
-                    <h:outputText value="CPF"/>
-                    <h:inputText id="inputCPF" value="#{controladorCandidato.candidato.cpf}" required="true" 
-                                 requiredMessage="Digite o CPF"/>
-                    <p:message for="inputCPF"/>
-                    
-                    <h:outputText value="Celular"/>
-                    <h:inputText id="inputCelular" value="#{controladorCandidato.candidato.celular}" required="true" 
-                                 requiredMessage="Digite o Celular"/>
-                    <p:message for="inputCelular"/>
+                   <h:outputText value="Nome"/>
+                <h:inputText id="inputNome" value="#{controladorCandidato.candidato.nome}" required="true" 
+                             requiredMessage="Digite o Nome"/>
+                <p:message for="inputNome"/>
+
+                <h:outputText value="CPF"/>
+                <h:inputText id="inputCPF" value="#{controladorCandidato.candidato.cpf}" required="true" 
+                             requiredMessage="Digite o CPF"/>
+                <p:message for="inputCPF"/>
+
+                <h:outputText value="Celular"/>
+                <h:inputText id="inputCelular" value="#{controladorCandidato.candidato.celular}" required="true" 
+                             requiredMessage="Digite o Celular"/>
+                <p:message for="inputCelular"/>
+
+                <h:outputText value="Logradouro"/>
+                <h:inputText id="inputLogradouro" value="#{controladorCandidato.candidato.endereco.logradouro}" required="true" 
+                             requiredMessage="Digite o Logradouro"/>
+                <p:message for="inputLogradouro"/>
+
+                <h:outputText value="Número"/>
+                <h:inputText id="inputNumero" value="#{controladorCandidato.candidato.endereco.numero}" required="true" 
+                             requiredMessage="Digite o Número"/>
+                <p:message for="inputNumero"/>
+                
+                <h:outputText value="Bairro"/>
+                <h:inputText id="inputBairro" value="#{controladorCandidato.candidato.endereco.bairro}" required="true" 
+                             requiredMessage="Digite o Bairro"/>
+                <p:message for="inputBairro"/>
+                
+                <h:outputText value="Estado"/>
+                <h:inputText id="inputEstado" value="#{controladorCandidato.candidato.endereco.estado}" required="true" 
+                             requiredMessage="Digite o Estado"/>
+                <p:message for="inputEstado"/>
+                
+                <h:outputText value="Cidade"/>
+                <h:inputText id="inputCidade" value="#{controladorCandidato.candidato.endereco.cidade}" required="true" 
+                             requiredMessage="Digite a Cidade "/>
+                <p:message for="inputCidade"/>
+                
+                <h:outputText value="CEP"/>
+                <h:inputText id="inputCEP" value="#{controladorCandidato.candidato.endereco.cep}" required="true" 
+                             requiredMessage="Digite o CEP"/>
+                <p:message for="inputCEP"/>
+                
+                <h:outputText value="Email"/>
+                <h:inputText id="inputEmail" value="#{controladorCandidato.candidato.usuario.email}" required="true" 
+                             requiredMessage="Digite o Email"/>
+                <p:message for="inputEmail"/>
+                
+                <h:outputText value="Senha"/>
+                <h:inputText id="inputSenha" value="#{controladorCandidato.candidato.usuario.senha}" required="true" 
+                             requiredMessage="Digite a Senha"/>
+                <p:message for="inputSenha"/>
+                
+                <h:outputText value="Competencias"/>
+                <h:inputTextarea id="inputCompetencias" value="#{controladorCandidato.competenciasCandidato}" required="true"
+                                 requiredMessage="Digite suas Competencias"/>
+                <p:message for="inputCompetencias"/>
+                
+                <h:outputText value="Experiencia"/>
+                <h:inputTextarea id="inputExperiencia" value="#{controladorCandidato.experienciasCandidato}" />
+                <h:outputText/>
                 
                 </p:panelGrid>
+                
+                <p:commandButton value="Salvar"
+                             update="cadastroCandidato"
+                             action="#{controladorCandidato.alterar()}"/>
+                <p:button value="Cancelar"
+                             outcome="/candidato/apresentar"/>
             </p:fieldset>        
         </h:form>
     </h:body>
