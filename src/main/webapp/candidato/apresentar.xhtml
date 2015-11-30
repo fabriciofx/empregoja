@@ -14,7 +14,7 @@
         <ui:include src="/menu.xhtml"/>
         
         <h:form id="form">
-            <p:dataTable id="tabelaCandidatos" value="#{controladorCandidato.todosCandidatos}" var="item"
+            <p:dataTable id="tabelaCandidatos" value="#{controladorCandidato.getTodosCandidatos()}" var="item"
                          rowKey="#{item.id}" paginator="true" rows="5" selectionMode="single"
                          selection="#{controladorCandidato.candidato}">
                 
