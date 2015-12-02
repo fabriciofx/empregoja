@@ -23,10 +23,10 @@ and open the template in the editor.
 
         <h:form id="form">
             <p:dataTable id="tabelaEmprea" value="#{controladorEmpresas.todosEmpresa}" var="item"
-                         rowKey="#{item.id}" paginator="true" rows="5" selectionMode="single"
+                         rowKey="#{item.cnpj}" paginator="true" rows="5" selectionMode="single"
                          selection="#{controladorEmpresas.todosEmpresa}">
-                <p:column headerText="Codigo" footerText="Codigo">
-                    <h:outputText value="#{item.id}"/>
+                <p:column headerText="CNPJ" footerText="CNPJ">
+                    <h:outputText value="#{item.cnpj}"/>
                 </p:column>
                 <p:column sortBy="#{item.nome}" filterBy="#{item.nome}">
                     <f:facet name="header">
