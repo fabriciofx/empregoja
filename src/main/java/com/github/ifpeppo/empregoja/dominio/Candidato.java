@@ -3,12 +3,18 @@ package com.github.ifpeppo.empregoja.dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "candidato")
@@ -29,9 +35,12 @@ public class Candidato implements Serializable {
     @Embedded
     private Usuario usuario;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Competencia> competencias;
-    @OneToMany
+    
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "Experiencia", joinColumns = @JoinColumn(name = "candidato", nullable = false), 
+            uniqueConstraints = @UniqueConstraint(columnNames = {"candidato", "texto" }))
     private List<Experiencia> experiencias;
 
     public Candidato(String nome, String cpf, String celular, Endereco endereco, Usuario usuario, List<Competencia> competencias,

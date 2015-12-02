@@ -64,6 +64,7 @@ public class ControladorCandidato implements Serializable {
     }
 
     public List<Candidato> getTodosCandidatos() {
+        consultar();
         return todosCandidatos;
     }
     
@@ -86,4 +87,8 @@ public class ControladorCandidato implements Serializable {
     public void setExperienciasCandidato(String experienciasCandidato) {
         this.experienciasCandidato = experienciasCandidato;
     }  
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
+    }
 }

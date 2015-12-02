@@ -10,10 +10,10 @@
     <h:body>
         <ui:include src="/menu.xhtml"/>
         
-        <h:form id="form">
+        <h:form id="alterarCandidato">
             <p:messages/>
             
-            <p:fieldset legend="Alterar do Candidato">
+            <p:fieldset legend="Alterar Candidato">
                 
                 <p:panelGrid columns="3">
                    <h:outputText value="Nome"/>
@@ -83,7 +83,7 @@
                 </p:panelGrid>
                 
                 <p:commandButton value="Salvar"
-                             update="cadastroCandidato"
+                             update="alterarCandidato"
                              action="#{controladorCandidato.alterar()}"/>
                 <p:button value="Cancelar"
                              outcome="/candidato/apresentar"/>
