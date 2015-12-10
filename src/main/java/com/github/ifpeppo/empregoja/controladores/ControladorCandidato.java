@@ -10,6 +10,7 @@ import com.github.ifpeppo.empregoja.dominio.Competencia;
 import com.github.ifpeppo.empregoja.dominio.Experiencia;
 import com.github.ifpeppo.empregoja.dominio.repositorio.Candidatos;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -34,6 +35,7 @@ public class ControladorCandidato implements Serializable {
     private List<Candidato> todosCandidatos;
     private String competenciasCandidato = null;
     private String experienciasCandidato = null;
+    private ControladorCompetencia controladorCompetencia;
     
     public void consultar(){
         todosCandidatos = candidatos.todos();
@@ -41,18 +43,27 @@ public class ControladorCandidato implements Serializable {
     
     public void novo(){
         candidato = new Candidato();
+        controladorCompetencia = new ControladorCompetencia();
     }
     
     public String adicionar(){
-        Competencia competencias = new Competencia(competenciasCandidato);
-        Experiencia experiencias = new Experiencia(experienciasCandidato);
-        candidato.adicionarCompetencias(competencias);
+        Experiencia experiencias = new Experiencia(experienciasCandidato);  
         candidato.adicionarExperiencias(experiencias);
+        adicionarCompetenciaCandidato();
         candidatos.adiciona(candidato);
         consultar();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Candidato cadastrado com sucesso!"));
         
         return "/candidato/apresentar";
+    }
+    
+    public void adicionarCompetenciaCandidato(){
+        List<Competencia> competencias = controladorCompetencia.getCompetenciasSelecionadas();
+        candidato.adicionarCompetencias(competencias);
+    }
+    
+    public List<Competencia> listaCompetenciasCandidato(){
+        return candidato.getCompetencias();
     }
     
     public void alterar(){
@@ -66,10 +77,6 @@ public class ControladorCandidato implements Serializable {
     public List<Candidato> getTodosCandidatos() {
         consultar();
         return todosCandidatos;
-    }
-    
-    public void detalhe(Candidato candidato){
-        this.candidato = candidato;
     }
 
     public String getCompetenciasCandidato() {
@@ -91,4 +98,13 @@ public class ControladorCandidato implements Serializable {
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
     }
+
+    public ControladorCompetencia getControladorCompetencia() {
+        return controladorCompetencia;
+    }
+
+    public void setControladorCompetencia(ControladorCompetencia controladorCompetencia) {
+        this.controladorCompetencia = controladorCompetencia;
+    }
+    
 }

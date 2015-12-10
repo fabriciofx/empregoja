@@ -122,11 +122,11 @@ public class Candidato implements Serializable {
         this.experiencias = experiencias;
     }
     
-    public void adicionarCompetencias(Competencia competencia){
+    public void adicionarCompetencias(List<Competencia> competencia){
         if(competencia == null){
             return;
         }
-        competencias.add(competencia);
+        competencias = competencia;
     }
     
     public void adicionarExperiencias(Experiencia experiencia){

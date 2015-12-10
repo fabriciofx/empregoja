@@ -8,9 +8,8 @@ package com.github.ifpeppo.empregoja.controladores;
 import com.github.ifpeppo.empregoja.dominio.Competencia;
 import com.github.ifpeppo.empregoja.dominio.repositorio.Competencias;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -29,6 +28,7 @@ public class ControladorCompetencia implements Serializable {
     
     private Competencia competencia;
     private List<Competencia> todasCompetencias;
+    private List<Competencia> competenciasSelecionadas;
     
     public void consultar(){
         todasCompetencias = competencias.todos();
@@ -38,11 +38,17 @@ public class ControladorCompetencia implements Serializable {
         competencia = new Competencia();
     }
     
-    public String adicionar(){
+    public void adicionarCompetenciasCandidato(){
+        if(this.competenciasSelecionadas == null){
+            this.competenciasSelecionadas = new ArrayList<>();
+        }
+        adicionar();
+        this.competenciasSelecionadas.add(competencia);
+    }
+    
+    public void adicionar(){
         competencias.adiciona(competencia);
         consultar();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Candidato cadastrado com sucesso!"));
-        return "";
     }
     
     public void alterar(){
@@ -54,10 +60,19 @@ public class ControladorCompetencia implements Serializable {
     }
     
     public List<Competencia> getTodasCompetencias(){
+        consultar();
         return todasCompetencias;
     }
     
-    public void detalhe(Competencia competencia){
+    public void setCompetencia(Competencia competencia){
         this.competencia = competencia;
     }
+
+    public List<Competencia> getCompetenciasSelecionadas() {
+        return this.competenciasSelecionadas;
+    }
+
+    public void setCompetenciasSelecionadas(List<Competencia> competenciasSelecionadas) {
+        this.competenciasSelecionadas = competenciasSelecionadas;
+    }  
 }
