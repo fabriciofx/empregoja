@@ -8,6 +8,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,9 +34,13 @@ public class Empresa implements Serializable {
     @Embedded
     private Usuario usuario;
        
+<<<<<<< HEAD
+    @OneToMany (cascade=CascadeType.ALL)
+=======
     @OneToMany(cascade = CascadeType.ALL)
+>>>>>>> 52179e4f10a8ccf2f0f1c7338c0899901ee80dbc
     private List<Vaga> vagas;
-
+  
     public Empresa(long id, String nome,String cnpj, String telefone, Endereco endereco, Usuario usuario, List<Vaga> vagas) {
         this.id = id;
         this.nome = nome;

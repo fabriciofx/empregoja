@@ -28,7 +28,7 @@ public class CandidatosHibernate extends RepositorioHibernate<Candidato, Integer
     
     @Override
     public List<Candidato> porCpf(String Cpf) {
-        Objects.requireNonNull(Cpf, "cnpj inválido");
+        Objects.requireNonNull(Cpf, "cpf inválido");
 
         TypedQuery<Candidato> query = manager.createQuery("FROM Empresa e WHERE e.cnpj LIKE :cnpj", Candidato.class);
         query.setParameter("cnpj", "%" + Cpf + "%");

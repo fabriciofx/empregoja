@@ -16,6 +16,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
+           <f:metadata>
+               <f:viewAction action="#{controladorEmpresas.novo()}" />
+        </f:metadata>
         <p:growl id="gro" showDetail="true" sticky="false" life="3000" autoUpdate="true"/>
         <ui:include src="/menu.xhtml"/><p/>
 
@@ -25,7 +28,7 @@ and open the template in the editor.
                 <p:panelGrid columns="3">
                     
                       <h:outputText value="Nome"/>
-                    <p:inputText id="inputNome" value="#{controladorEmpresas.empresa.nome}" required="true"
+                      <p:inputText id="inputNome" value="#{controladorEmpresas.empresa.nome}" required="true"
                                  requiredMessage="Digite o Nome"/>
                     <p:message id="messageNome" for="inputNome" />
                     

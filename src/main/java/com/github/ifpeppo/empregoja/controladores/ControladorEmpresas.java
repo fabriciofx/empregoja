@@ -46,7 +46,7 @@ public class ControladorEmpresas implements Serializable {
     public String adicionar() {
         Vaga vagas = new Vaga(vagaEmpresa);
         empresas.adiciona(empresa);
-         empresa.adicionarVaga(vagas);
+        empresa.adicionarVaga(vagas);
         consultar();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Empresa foi cadastrada com sucesso!"));
         
